@@ -8,7 +8,8 @@ class zabbix::repo(
     }
 )
 {
-    $location = "http://repo.zabbix.com/zabbix/${zabbix_version}/${::operatingsystem}/"
+    $downcase_os = downcase($::operatingsystem)
+    $location = "http://repo.zabbix.com/zabbix/${zabbix_version}/${downcase_os}/"
 
     include apt
 
