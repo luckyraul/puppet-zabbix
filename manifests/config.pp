@@ -10,9 +10,11 @@ class zabbix::config (
         'path' => $zabbix::params::agent_config_path,
     }
     $params = {
-        'Server' => $server,
-        'ServerActive' => $server_active,
-        'Hostname' => $hostname,
+        '' => {
+            'Server' => $server,
+            'ServerActive' => $server_active,
+            'Hostname' => $hostname,
+        }
     }
 
     create_ini_settings($params, $defaults)
