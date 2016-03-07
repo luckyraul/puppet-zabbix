@@ -23,7 +23,7 @@ class zabbix::config (
     if($nginx){
         file { '/etc/zabbix/zabbix_agentd.d/nginx.conf':
             ensure  => present,
-            content => template('nginx/scripts/nginx.conf.erb'),
+            content => template('zabbix/scripts/nginx.conf.erb'),
         }
     } else {
         file { '/etc/zabbix/zabbix_agentd.d/nginx.conf':
