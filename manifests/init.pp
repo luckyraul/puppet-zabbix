@@ -14,8 +14,8 @@ class zabbix (
     anchor { 'zabbix::begin': }
         -> class  { 'zabbix::repo': }
         -> class  { 'zabbix::packages': }
-        -> class  { 'zabbix::service': }
         -> class  { 'zabbix::config': }
+        -> class  { 'zabbix::service': }
         -> anchor { 'zabbix::end': }
 
 }

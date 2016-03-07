@@ -8,7 +8,8 @@ class zabbix::config (
 ) inherits zabbix::params
 {
     $defaults = {
-        'path' => $zabbix::params::agent_config_path,
+        'path'   => $zabbix::params::agent_config_path,
+        'notify' => Service['zabbix-agent'],
     }
     $params = {
         '' => {
