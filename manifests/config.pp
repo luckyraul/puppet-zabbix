@@ -1,9 +1,9 @@
 # == Class: zabbix::config
 #
 class zabbix::config (
-    $server = '127.0.0.1',
-    $server_active = '127.0.0.1',
-    $hostname = $::fqdn,
+    $server = $zabbix::server,
+    $server_active = $zabbix::server_active,
+    $hostname = $zabbix::hostname,
 ) inherits zabbix::params
 {
     $defaults = {
