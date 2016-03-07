@@ -1,9 +1,10 @@
 # == Class: zabbix::config
 #
 class zabbix::config (
-    $server = $zabbix::server,
+    $server        = $zabbix::server,
     $server_active = $zabbix::server_active,
-    $hostname = $zabbix::hostname,
+    $hostname      = $zabbix::hostname,
+    $nginx         = $zabbix::nginx_script,
 ) inherits zabbix::params
 {
     $defaults = {
@@ -18,4 +19,17 @@ class zabbix::config (
     }
 
     create_ini_settings($params, $defaults)
+
+    if($nginx){
+        file { '/etc/zabbix/zabbix_agentd.d/nginx.conf':
+            ensure  => present,
+            content => template('nginx/scripts/nginx.conf.erb'),
+        }
+    } else {
+        file { '/etc/zabbix/zabbix_agentd.d/nginx.conf':
+            ensure => absent,
+        }
+    }
+
+    File['/etc/zabbix/zabbix_agentd.d/nginx.conf'] ~> Service['zabbix-agent']
 }
