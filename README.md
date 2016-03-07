@@ -1,1 +1,1 @@
-# puppet-php
+# puppet-zabbix
