@@ -29,7 +29,7 @@
           <snmp_community/>
           <multiplier>0</multiplier>
           <snmp_oid/>
-          <key>nginx.accepted[]</key>
+          <key>nginx.accepted</key>
           <delay>30</delay>
           <history>60</history>
           <trends>365</trends>
@@ -72,7 +72,7 @@
           <snmp_community/>
           <multiplier>0</multiplier>
           <snmp_oid/>
-          <key>nginx.active[]</key>
+          <key>nginx.active</key>
           <delay>30</delay>
           <history>60</history>
           <trends>365</trends>
@@ -115,7 +115,7 @@
           <snmp_community/>
           <multiplier>0</multiplier>
           <snmp_oid/>
-          <key>nginx.handled[]</key>
+          <key>nginx.handled</key>
           <delay>30</delay>
           <history>60</history>
           <trends>365</trends>
@@ -158,7 +158,7 @@
           <snmp_community/>
           <multiplier>0</multiplier>
           <snmp_oid/>
-          <key>nginx.reading[]</key>
+          <key>nginx.reading</key>
           <delay>30</delay>
           <history>60</history>
           <trends>365</trends>
@@ -201,7 +201,7 @@
           <snmp_community/>
           <multiplier>0</multiplier>
           <snmp_oid/>
-          <key>nginx.requests[]</key>
+          <key>nginx.requests</key>
           <delay>30</delay>
           <history>60</history>
           <trends>365</trends>
@@ -244,7 +244,7 @@
           <snmp_community/>
           <multiplier>0</multiplier>
           <snmp_oid/>
-          <key>nginx.waiting[]</key>
+          <key>nginx.waiting</key>
           <delay>30</delay>
           <history>60</history>
           <trends>365</trends>
@@ -287,7 +287,7 @@
           <snmp_community/>
           <multiplier>0</multiplier>
           <snmp_oid/>
-          <key>nginx.writing[]</key>
+          <key>nginx.writing</key>
           <delay>30</delay>
           <history>60</history>
           <trends>365</trends>
@@ -359,7 +359,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.requests[]</key>
+            <key>nginx.requests</key>
           </item>
         </graph_item>
         <graph_item>
@@ -371,7 +371,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.handled[]</key>
+            <key>nginx.handled</key>
           </item>
         </graph_item>
         <graph_item>
@@ -383,7 +383,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.accepted[]</key>
+            <key>nginx.accepted</key>
           </item>
         </graph_item>
         <graph_item>
@@ -395,7 +395,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.active[]</key>
+            <key>nginx.active</key>
           </item>
         </graph_item>
       </graph_items>
@@ -427,7 +427,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.requests[]</key>
+            <key>nginx.requests</key>
           </item>
         </graph_item>
         <graph_item>
@@ -439,7 +439,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.handled[]</key>
+            <key>nginx.handled</key>
           </item>
         </graph_item>
         <graph_item>
@@ -451,7 +451,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.accepted[]</key>
+            <key>nginx.accepted</key>
           </item>
         </graph_item>
         <graph_item>
@@ -463,7 +463,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.active[]</key>
+            <key>nginx.active</key>
           </item>
         </graph_item>
         <graph_item>
@@ -475,7 +475,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.writing[]</key>
+            <key>nginx.writing</key>
           </item>
         </graph_item>
         <graph_item>
@@ -487,7 +487,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.reading[]</key>
+            <key>nginx.reading</key>
           </item>
         </graph_item>
         <graph_item>
@@ -499,7 +499,7 @@
           <type>0</type>
           <item>
             <host>Template App Nginx</host>
-            <key>nginx.waiting[]</key>
+            <key>nginx.waiting</key>
           </item>
         </graph_item>
       </graph_items>
