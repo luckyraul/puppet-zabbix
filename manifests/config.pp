@@ -74,8 +74,8 @@ class zabbix::config (
         file { [
           '/etc/zabbix/zabbix_agentd.d/iostat.conf',
           "${scripts_path}/iostat-discovery.sh",
-          "${scripts_path}/iostat-cron.sh"
-          "${scripts_path}/iostat-check.sh"
+          "${scripts_path}/iostat-cron.sh",
+          "${scripts_path}/iostat-check.sh",
           ]:
             ensure => absent,
         }
