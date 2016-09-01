@@ -48,16 +48,19 @@ class zabbix::config (
 
         file { "${scripts_path}/iostat-discovery.sh":
             ensure  => present,
+            mode    => '0755',
             content => template('zabbix/scripts/iostat-discovery.sh.erb'),
         }
 
         file { "${scripts_path}/iostat-cron.sh":
             ensure  => present,
+            mode    => '0755',
             content => template('zabbix/scripts/iostat-cron.sh.erb'),
         }
 
         file { "${scripts_path}/iostat-check.sh":
             ensure  => present,
+            mode    => '0755',
             content => template('zabbix/scripts/iostat-check.sh.erb'),
         }
 
