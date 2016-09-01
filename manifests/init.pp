@@ -9,6 +9,7 @@ class zabbix (
     $server_active  = '127.0.0.1',
     $hostname       = $::fqdn,
     $nginx_script   = false,
+    $iostat_script  = false,
     ) inherits zabbix::params
 {
     anchor { 'zabbix::begin': }
