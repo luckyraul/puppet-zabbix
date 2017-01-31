@@ -10,6 +10,7 @@ class zabbix (
     $hostname       = $::fqdn,
     $nginx_script   = false,
     $iostat_script  = false,
+    $mdraid         = false,
     ) inherits zabbix::params
 {
     anchor { 'zabbix::begin': }

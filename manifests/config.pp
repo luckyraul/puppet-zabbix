@@ -7,6 +7,7 @@ class zabbix::config (
     $scripts_path  = $zabbix::params::scripts_path,
     $nginx         = $zabbix::nginx_script,
     $iostat        = $zabbix::iostat_script,
+    $mdraid        = $zabbix::mdraid,
 ) inherits zabbix::params
 {
     $defaults = {
@@ -30,7 +31,7 @@ class zabbix::config (
     if($nginx){
         file { '/etc/zabbix/zabbix_agentd.d/nginx.conf':
             ensure  => present,
-            content => template('zabbix/scripts/nginx.conf.erb'),
+            content => template('zabbix/config/nginx.conf.erb'),
         }
     } else {
         file { '/etc/zabbix/zabbix_agentd.d/nginx.conf':
@@ -40,10 +41,23 @@ class zabbix::config (
 
     File['/etc/zabbix/zabbix_agentd.d/nginx.conf'] ~> Service['zabbix-agent']
 
+    if($mdraid){
+        file { '/etc/zabbix/zabbix_agentd.d/mdraid.conf':
+            ensure  => present,
+            content => template('zabbix/config/mdraid.conf.erb'),
+        }
+    } else {
+        file { '/etc/zabbix/zabbix_agentd.d/mdraid.conf':
+            ensure => absent,
+        }
+    }
+
+    File['/etc/zabbix/zabbix_agentd.d/mdraid.conf'] ~> Service['zabbix-agent']
+
     if($iostat){
         file { '/etc/zabbix/zabbix_agentd.d/iostat.conf':
             ensure  => present,
-            content => template('zabbix/scripts/iostat.conf.erb'),
+            content => template('zabbix/config/iostat.conf.erb'),
         }
 
         file { "${scripts_path}/iostat-discovery.sh":
