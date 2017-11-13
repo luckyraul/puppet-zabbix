@@ -11,6 +11,9 @@ class zabbix (
     $nginx_script   = false,
     $iostat_script  = false,
     $mdraid         = false,
+    $mysql          = false,
+    $mysql_user     = undef,
+    $mysql_pass     = undef,
     ) inherits zabbix::params
 {
     anchor { 'zabbix::begin': }
@@ -19,5 +22,4 @@ class zabbix (
         -> class  { 'zabbix::config': }
         -> class  { 'zabbix::service': }
         -> anchor { 'zabbix::end': }
-
 }

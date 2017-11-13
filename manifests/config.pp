@@ -8,6 +8,9 @@ class zabbix::config (
     $nginx         = $zabbix::nginx_script,
     $iostat        = $zabbix::iostat_script,
     $mdraid        = $zabbix::mdraid,
+    $mysql         = $zabbix::mysql,
+    $mysql_user    = $zabbix::mysql_user,
+    $mysql_pass    = $zabbix::mysql_pass,
 ) inherits zabbix::params
 {
     $defaults = {
@@ -103,4 +106,18 @@ class zabbix::config (
     }
 
     File['/etc/zabbix/zabbix_agentd.d/iostat.conf'] ~> Service['zabbix-agent']
+
+
+    if($mysql){
+        file { '/var/lib/zabbix':
+            ensure  => directory,
+        } -> file {'/var/lib/zabbix/.my.cnf':
+            ensure  => present,
+            content => template('zabbix/config/mysql.cnf.erb'),
+        }
+    } else {
+        file { '/var/lib/zabbix/.my.cnf':
+            ensure => absent,
+        }
+    }
 }
