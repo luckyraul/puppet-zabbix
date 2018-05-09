@@ -5,6 +5,8 @@ class zabbix::packages (
     $package_name = $zabbix::package_name,
 )  inherits zabbix::params
 {
+    Exec['apt_update'] -> Package['zabbix-agent']
+
     package { 'zabbix-agent':
         ensure => $ensure,
         name   => $package_name,
