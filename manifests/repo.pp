@@ -7,15 +7,15 @@ class zabbix::repo (
         'source' => 'http://repo.zabbix.com/zabbix-official-repo.key',
     }
 ) inherits zabbix::params {
-    $downcase_os = downcase($::operatingsystem)
-    $location = "http://repo.zabbix.com/zabbix/${zabbix_version}/${downcase_os}/"
+    $operatingsystem = downcase($facts['os']['name'])
+    $releasename = $facts['lsbdistcodename']
 
     include apt
 
     apt::source { 'zabbix':
-        location => $location,
+        location => "http://repo.zabbix.com/zabbix/${zabbix_version}/${operatingsystem}/",
         repos    => $repos,
-        release  => $::releasename,
+        release  => $releasename,
         key      => $apt_key,
     }
 }

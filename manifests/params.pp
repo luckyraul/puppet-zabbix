@@ -14,14 +14,14 @@ class zabbix::params {
     $server_service_enable = true
     $frontend = true
 
-    case $::operatingsystem {
+    case $facts['os']['name'] {
         'Debian': {
             $agent_package_name = 'zabbix-agent'
             $server_package_name = 'zabbix-server-'
             $frontend_package_name = 'zabbix-frontend-php'
         }
         default: {
-            fail("Unsupported os: ${::operatingsystem}")
+            fail("Unsupported os: ${facts['os']['name']}")
         }
     }
 }
