@@ -1,6 +1,6 @@
 # == Class: nginx::params
 class zabbix::params {
-    $version = '4.2'
+    $version = '4.4'
     $agent_ensure = 'latest'
     $agent_service_ensure = 'running'
     $agent_service_enable = true
