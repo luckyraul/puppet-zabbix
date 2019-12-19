@@ -1,4 +1,4 @@
-# == Class: nginx::params
+# == Class: zabbix::params
 class zabbix::params {
     $version = '4.4'
     $agent_ensure = 'latest'
