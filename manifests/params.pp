@@ -18,11 +18,13 @@ class zabbix::params {
         'Ubuntu', 'Debian': {
             $agent_package_name = 'zabbix-agent'
             $server_package_name = 'zabbix-server-'
+            $server_service_name = 'zabbix-server'
             $frontend_package_name = 'zabbix-frontend-php'
         }
         'CentOS', 'Redhat': {
             $agent_package_name = 'zabbix-agent'
             $server_package_name = 'zabbix-server-'
+            $server_service_name = "zabbix-server-${server_database_type}"
             $frontend_package_name = "zabbix-web-${server_database_type}"
         }
         default: {
