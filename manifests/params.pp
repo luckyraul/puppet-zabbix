@@ -1,6 +1,6 @@
 # == Class: zabbix::params
 class zabbix::params {
-    $version = '4.4'
+    $version = '5.0'
     $agent_ensure = 'latest'
     $agent_service_ensure = 'running'
     $agent_service_enable = true
