@@ -1,9 +1,11 @@
 # == Class: zabbix
 class zabbix (
-    $ensure                = $zabbix::params::agent_ensure,
-    $package_name          = $zabbix::params::agent_package_name,
-    $service_ensure        = $zabbix::params::agent_service_ensure,
-    $service_enable        = $zabbix::params::agent_service_enable,
+    $agent_ensure          = $zabbix::params::agent_ensure,
+    $agent_service_ensure  = $zabbix::params::agent_service_ensure,
+    $agent_service_enable  = $zabbix::params::agent_service_enable,
+    $agent_package_name    = undef,
+    $agent_service_name    = undef,
+    $agent_version         = 1,
     $server                = '127.0.0.1',
     $server_active         = '127.0.0.1',
     $hostname              = $::fqdn,
@@ -18,7 +20,8 @@ class zabbix (
     anchor { 'zabbix::begin': }
         -> class  { 'zabbix::repo': }
         -> class  { 'zabbix::packages': }
-        -> class  { 'zabbix::config': }
+        -> class  { 'zabbix::config_agent': }
+        -> class  { 'zabbix::config_agent2': }
         -> class  { 'zabbix::service': }
         -> anchor { 'zabbix::end': }
 }
