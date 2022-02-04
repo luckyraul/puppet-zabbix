@@ -9,7 +9,7 @@ class zabbix::service (
     if ($service_name != undef) {
       $real_service_name = $service_name
     } else {
-      case $agent_version {
+      case $version {
         2: {
           $real_service_name = $zabbix::params::agent2_package_name
         }
