@@ -11,9 +11,11 @@ class zabbix::config_agent2 (
     if ($version == 2) {
         if ($ensure in [ 'present', 'installed', 'latest' ]) {
           $defaults = {
-              'path'   => $zabbix::params::agent2_config_path,
-              'notify' => Service['zabbix-agent'],
+              path    => $zabbix::params::agent2_config_path,
+              notify  => Service['zabbix-agent'],
+              require => Package['zabbix-agent'],
           }
+
           $params = {
               '' => {
                   'Server' => $server,
