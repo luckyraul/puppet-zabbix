@@ -8,9 +8,9 @@ class zabbix::server (
   $service_enable       = $zabbix::params::server_service_enable,
 ) inherits zabbix::params {
   anchor { 'zabbix_server::begin': }
-      -> class  { 'zabbix::repo': }
-      -> class  { 'zabbix::server_packages': }
-      -> class  { 'zabbix::server_config': }
-      -> class  { 'zabbix::server_service': }
-      -> anchor { 'zabbix_server::end': }
+  -> class { 'zabbix::repo': }
+  -> class { 'zabbix::server_packages': }
+  -> class { 'zabbix::server_config': }
+  -> class { 'zabbix::server_service': }
+  -> anchor { 'zabbix_server::end': }
 }
