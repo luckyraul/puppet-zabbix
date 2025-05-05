@@ -1,4 +1,5 @@
 # == Class zabbix::service
+# lint:ignore:parameter_documentation
 class zabbix::service (
   $version       = $zabbix::agent_version,
   $service_name    = $zabbix::agent_service_name,

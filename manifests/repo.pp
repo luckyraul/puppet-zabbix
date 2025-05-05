@@ -1,4 +1,5 @@
 # == Class: zabbix::repo
+# lint:ignore:parameter_documentation
 class zabbix::repo (
   $zabbix_version = $zabbix::params::version,
   $repos   = 'main',

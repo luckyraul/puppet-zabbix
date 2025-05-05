@@ -1,4 +1,5 @@
 # == Class zabbix::server_service
+# lint:ignore:parameter_documentation
 class zabbix::server_service (
   $service_name   = $zabbix::params::server_service_name,
   $service_enable = $zabbix::server::service_enable,

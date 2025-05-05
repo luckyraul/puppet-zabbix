@@ -1,4 +1,5 @@
 # == Class: zabbix
+# lint:ignore:parameter_documentation
 class zabbix (
   $agent_ensure          = $zabbix::params::agent_ensure,
   $agent_service_ensure  = $zabbix::params::agent_service_ensure,

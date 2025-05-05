@@ -1,4 +1,5 @@
 # == Class: zabbix::server
+# lint:ignore:parameter_documentation
 class zabbix::server (
   $ensure               = $zabbix::params::server_ensure,
   String $database_type = $zabbix::params::server_database_type,

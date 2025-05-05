@@ -9,6 +9,7 @@ class zabbix::packages (
     'Ubuntu', 'Debian': {
       Exec['apt_update'] -> Package['zabbix-agent']
     }
+    default: {}
   }
 
   if ($agent_package_name != undef) {

@@ -2,7 +2,4 @@
 #
 class zabbix::server_config (
 
-) inherits zabbix::params
-{
-
-}
+) inherits zabbix::params {}

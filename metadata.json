@@ -2,15 +2,62 @@
   "name": "luckyraul-zabbix",
   "version": "1.0.0",
   "author": "luckyraul",
-  "summary": "Module to manage the Zabbix Server and agent",
+  "summary": "Zabbix module for Puppet",
   "license": "MIT",
   "source": "https://github.com/luckyraul/puppet-zabbix",
   "project_page": "https://github.com/luckyraul/puppet-zabbix",
   "issues_url": "https://github.com/luckyraul/puppet-zabbix/issues",
-  "description": "Zabbix module for Puppet",
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 4.1.0"},
-    {"name":"puppetlabs/apt","version_requirement":">= 4.3.0"},
-    {"name": "puppetlabs/inifile","version_requirement":">= 1.4.3"}
-  ]
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.1.0"
+    },
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": ">= 4.3.0"
+    },
+    {
+      "name": "puppetlabs/inifile",
+      "version_requirement": ">= 1.4.3"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "10",
+        "11",
+        "12"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "20.04",
+        "22.04",
+        "24.04"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "9"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "9"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 7.0.0 < 9.0.0"
+    }
+  ],
+  "pdk-version": "3.4.0",
+  "template-url": "pdk-default#3.4.0",
+  "template-ref": "tags/3.4.0-0-gd3cc13f"
 }
