@@ -6,7 +6,7 @@ class zabbix (
   $agent_service_enable  = $zabbix::params::agent_service_enable,
   $agent_package_name    = undef,
   $agent_service_name    = undef,
-  $agent_version         = 1,
+  $agent_version         = '2',
   $server                = '127.0.0.1',
   $server_active         = '127.0.0.1',
   $hostname              = $facts['networking']['fqdn'],

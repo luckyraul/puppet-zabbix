@@ -10,11 +10,11 @@ class zabbix::service (
     $real_service_name = $service_name
   } else {
     case $version {
-      2: {
-        $real_service_name = $zabbix::params::agent2_package_name
+      '1': {
+        $real_service_name = $zabbix::params::agent_package_name
       }
       default: {
-        $real_service_name = $zabbix::params::agent_package_name
+        $real_service_name = $zabbix::params::agent2_package_name
       }
     }
   }

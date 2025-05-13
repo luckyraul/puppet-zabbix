@@ -16,11 +16,11 @@ class zabbix::packages (
     $real_package_name = $agent_package_name
   } else {
     case $agent_version {
-      2: {
-        $real_package_name = $zabbix::params::agent2_package_name
+      '1': {
+        $real_package_name = $zabbix::params::agent_package_name
       }
       default: {
-        $real_package_name = $zabbix::params::agent_package_name
+        $real_package_name = $zabbix::params::agent2_package_name
       }
     }
   }
