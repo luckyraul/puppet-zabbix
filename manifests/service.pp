@@ -1,29 +1,25 @@
-# == Class zabbix::service
-# lint:ignore:parameter_documentation
+# == Class: zabbix::service
+# @param ensure
+#   Specifies the desired state of the Zabbix Agent 2 service.
+#   Accepts `running` or `stopped`.
+#   Defaults to `$zabbix::agent_service_ensure`.
+#
+# @param enable
+#   Specifies whether the Zabbix Agent 2 service should be enabled to start
+#   automatically at boot.
+#   Defaults to `$zabbix::agent_service_enable`.
+#
 class zabbix::service (
-  $version       = $zabbix::agent_version,
-  $service_name    = $zabbix::agent_service_name,
-  $service_enable  = $zabbix::agent_service_enable,
-  $service_ensure  = $zabbix::agent_service_ensure,
-) inherits zabbix::params {
-  if ($service_name != undef) {
-    $real_service_name = $service_name
-  } else {
-    case $version {
-      '1': {
-        $real_service_name = $zabbix::params::agent_package_name
-      }
-      default: {
-        $real_service_name = $zabbix::params::agent2_package_name
-      }
-    }
-  }
-
+  Stdlib::Ensure::Service $ensure = $zabbix::agent_service_ensure,
+  Boolean $enable = $zabbix::agent_service_enable,
+) {
+  assert_private()
   service { 'zabbix-agent':
-    ensure     => $service_ensure,
-    name       => $real_service_name,
-    enable     => $service_enable,
+    ensure     => $ensure,
+    name       => 'zabbix-agent2',
+    enable     => $enable,
     hasstatus  => true,
     hasrestart => true,
+    require    => Package['zabbix-agent'],
   }
 }
